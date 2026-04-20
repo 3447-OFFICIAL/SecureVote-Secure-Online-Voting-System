@@ -1,6 +1,14 @@
 # 🗳️ SecureVote — Secure Online Voting System
 
+[![Java](https://img.shields.io/badge/Java-17-orange.svg)](https://www.oracle.com/java/)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.0-green.svg)](https://spring.io/projects/spring-boot)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-blue.svg)](https://www.mysql.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A full-stack, enterprise-grade online voting platform with **blockchain-inspired audit trails**, **JWT authentication**, and **tamper-proof vote verification**.
+
+**Repository:** [https://github.com/3447-OFFICIAL/SecureVote-Secure-Online-Voting-System](https://github.com/3447-OFFICIAL/SecureVote-Secure-Online-Voting-System)
 
 ## 🏗️ Architecture
 
@@ -62,6 +70,17 @@ MINI PROJECT/
 ├── run.bat                          # Project Management Console
 └── README.md
 ```
+
+## 🛠️ Maintenance & CLI
+
+The project includes a `run.bat` utility at the root to simplify development and deployment. 
+
+**Available Actions:**
+1. **Run All Services (Docker):** Starts MySQL, Backend, and Frontend in containers.
+2. **Run Locally (Dev Mode):** Runs Spring Boot and Next.js natively (supports hot-reloading).
+3. **Build Project (Production):** Compiles the backend JAR and builds the frontend static files.
+4. **Maintenance [Docker]:** Stops services and cleans up volumes.
+5. **Merkle Audit:** Provides instructions for cryptographic election sealing.
 
 ## 🚀 Quick Start
 
