@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: voting-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: voting_system
+      MYSQL_USER: voting_user
+      MYSQL_PASSWORD: voting_pass
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - voting-network
+
+  # Spring Boot Backend
+  backend:
+    build: ./backend
+    container_name: voting-backend
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/voting_system?useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: voting_user
+      SPRING_DATASOURCE_PASSWORD: voting_pass
+    depends_on:
+      - mysql
+    networks:
+      - voting-network
+
+  # Next.js Frontend
+  frontend:
+    build: ./frontend
+    image: miniproject-frontend:v6
+    container_name: voting-frontend
+    ports:
+      - "3001:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8080/api
+    depends_on:
+      - backend
+    networks:
+      - voting-network
+
+volumes:
+  mysql_data:
+
+networks:
+  voting-network:
+    driver: bridge
