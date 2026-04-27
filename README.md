@@ -1,6 +1,6 @@
 # 🗳️ SecureVote — Secure Online Voting System
 
-[![Java](https://img.shields.io/badge/Java-17-orange.svg)](https://www.oracle.com/java/)
+[![Java](https://img.shields.io/badge/Java-25-orange.svg)](https://www.oracle.com/java/)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.0-green.svg)](https://spring.io/projects/spring-boot)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-blue.svg)](https://www.mysql.com/)
@@ -18,7 +18,7 @@ A full-stack, enterprise-grade online voting platform with **blockchain-inspired
 │   (Frontend)    │     │   (REST API)     │     │          │
 │   Port: 3000    │     │   Port: 8080     │     │Port: 3306│
 └─────────────────┘     └──────────────────┘     └──────────┘
-      TypeScript              Java 17              InnoDB
+      TypeScript              Java 25              InnoDB
     Tailwind CSS          Spring Security
    Framer Motion            JWT / BCrypt
        Axios            SHA-256 Audit Chain
@@ -85,7 +85,7 @@ The project includes a `run.bat` utility at the root to simplify development and
 ## 🚀 Quick Start
 
 ### Prerequisites
-- **Java 17+** and **Maven 3.8+**
+- **Java 25** and **Maven 3.8+**
 - **Node.js 18+** and **npm**
 - **MySQL 8.0** (or use Docker)
 

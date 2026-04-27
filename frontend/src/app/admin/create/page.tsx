@@ -60,11 +60,17 @@ export default function CreateElectionPage() {
     setIsLoading(true);
 
     try {
-      // Ensure ISO format for backend LocalDateTime
+      // Format dates correctly for Spring's LocalDateTime (removing 'Z' and milliseconds)
+      const formatToLocalISO = (dateStr: string) => {
+        if (!dateStr) return null;
+        const d = new Date(dateStr);
+        return d.toISOString().split('.')[0]; // Result: 2026-04-21T11:26:39
+      };
+
       const payload = {
         ...formData,
-        startDate: new Date(formData.startDate).toISOString(),
-        endDate: new Date(formData.endDate).toISOString()
+        startDate: formatToLocalISO(formData.startDate),
+        endDate: formatToLocalISO(formData.endDate)
       };
       
       await api.post('/admin/elections', payload);
